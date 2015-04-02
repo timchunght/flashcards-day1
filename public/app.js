@@ -17,6 +17,14 @@ var app = angular.module('FlashCards', [])
 
 })
 .controller('MainController', function($scope){
+
+	$scope.answerQuestion = function (flashCard, answer) {
+		flashCard.answeredCorrectly = answer.correct;
+		flashCard.answered = true;
+		console.log(flashCard.answeredCorrectly);
+    console.log(answer);
+	};
+
 	$scope.flashCards = [
     {
         question: 'What is Angular?',

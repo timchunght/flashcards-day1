@@ -53,14 +53,10 @@
 
 }
 
-.answer-feedback {
-  text-align: center;
-  margin-top: 50px;
-  font-weight: bold;
-  &.correct {
+
+.answer-feedback.correct {
     color: green;
-  }
-  &.incorrect {
+}
+.answer-feedback.incorrect {
     color: red;
-  }
 }
