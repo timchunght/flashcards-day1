@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Flash Cards</title>
-        <!-- We've provided some styles for you, aren't we nice? -->
-        <link rel="stylesheet" type="text/css" href="reset.css" />
-        <link rel="stylesheet" type="text/css" href="style.css" />
+      <title>Flash Cards</title>
+      <!-- We've provided some styles for you, aren't we nice? -->
+      <link rel="stylesheet" type="text/css" href="reset.css" />
+      <link rel="stylesheet" type="text/css" href="style.css" />
+      <script src="angular.js"></script>
+    	<script src="app.js"></script>
     </head>
-    <body>
+    <body ng-app="FlashCards">
+    	<!-- {{ 2+2 }} -->
+    	
+    	<div class="flash-card" ng-controller="FlashCardController" >
+	    	<h1>{{ flashCard.question }}</h1>
+		    <ul class="flash-card-answers">
+		        <li class="flash-card-answer" ng-repeat="answer in flashCard.answers" ng-click="answerQuestion(answer)">
+		          {{answer.text}}
+		        </li>
+		    </ul>
+				<h2 class="answer-feedback" ng-show="answered">
+			    <span ng-show="answeredCorrectly">Yeah, you got it right!</span>
+			    <span ng-show="!answeredCorrectly">Nope, you got it wrong.</span>
+				</h2>
+
+			</div>
+    	
+    	<!-- <div ng-controller="MainController" ng-repeat="flashCard in flashCards">
+    		{{ flashCards}}
+
+    		
+    	</div> -->
+
     </body>
 </html>
