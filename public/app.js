@@ -21,8 +21,7 @@ var app = angular.module('FlashCards', [])
 	$scope.answerQuestion = function (flashCard, answer) {
 		flashCard.answeredCorrectly = answer.correct;
 		flashCard.answered = true;
-		console.log(flashCard.answeredCorrectly);
-    console.log(answer);
+		
 	};
 
 	$scope.flashCards = [
